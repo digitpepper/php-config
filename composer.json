@@ -1,0 +1,11 @@
+{
+	"name": "digitpepper/php-config",
+	"description": "A php config",
+	"require": {
+		"php": ">=7.4"
+	},
+	"license": "MIT",
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
