@@ -12,7 +12,7 @@ class Config
 	protected static $dir = '';
 
 	/**
-	 * @var array<string, array<string, mixed>>
+	 * @var array <string, array<string, mixed>>
 	 */
 	protected static $data = [];
 
@@ -27,9 +27,13 @@ class Config
 	/**
 	 * @param string $dir
 	 */
-	public static function set_dir(string $dir)
+	public static function set_dir(string $dir): void
 	{
-		self::$dir = realpath($dir);
+		$_dir = \realpath($dir);
+		if ($_dir === false) {
+			throw new \Exception('dir doesn\'t exist');
+		}
+		self::$dir = $_dir;
 	}
 
 	/**
